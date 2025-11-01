@@ -1,5 +1,4 @@
 Projectile[] sue;
-//declare bacteria variables here
 void setup() {
   noStroke();
   size(1000, 1000);
@@ -13,7 +12,6 @@ void setup() {
     sue[i] = new superball();
   }
 }
-
 void draw() {
   background(0, 0, 200);
   for (int i = 0; i < sue.length; i++) {
@@ -24,8 +22,8 @@ void draw() {
       sue[i].myY = mouseY;
     }
   }
-  fill(255,0,0);
-  ellipse(mouseX, mouseY, 50,50);
+  fill(255, 0, 0);
+  ellipse(mouseX, mouseY, 50, 50);
 }
 
 class Projectile {
@@ -38,18 +36,17 @@ class Projectile {
     speed = Math.random()*8;
     Color = 200;
     size = (int)(Math.random()*3)+5;
-  }
-  void move() {
-    myX = (myX + speed * Math.cos(rotation));
-    myY = (myY + speed * Math.sin(rotation));    
-  }
-  void show() {
-    fill(Color,Color,255);
-    ellipse((float)myX,(float)myY,size,size);
-  }
 }
-
-class superball extends Projectile{
+void move() {
+  myX = (myX + speed * Math.cos(rotation));
+  myY = (myY + speed * Math.sin(rotation));
+}
+void show() {
+  fill(Color, Color, 255);
+  ellipse((float)myX, (float)myY, size, size);
+}
+}
+class superball extends Projectile {
   superball() {
     myX = Math.random()*1000;
     myY = Math.random()*1000;
@@ -60,7 +57,7 @@ class superball extends Projectile{
   } void move() {
     myX = (myX + speed * Math.cos(rotation));
     myY = (myY + speed * Math.sin(rotation));
-    if (myX > 1000 || myY > 1000 || myX < 0 || myY < 0){
+    if (myX > 1000 || myY > 1000 || myX < 0 || myY < 0) {
       myX = Math.random()*1000;
       myY = Math.random()*1000;
     }
