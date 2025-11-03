@@ -33,7 +33,7 @@ class Projectile {
     myX = mouseX;
     myY = mouseY;
     rotation = Math.random() * 2 * PI;
-    speed = Math.random()*8;
+    speed = 1;
     Color = 200;
     size = (int)(Math.random()*3)+5;
 }
